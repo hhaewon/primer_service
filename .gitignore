@@ -130,5 +130,5 @@ dmypy.json
 <<<<<<< HEAD
 
 성현.xlsx
-.idea
-.vscode
+.idea/
+.vscode/
