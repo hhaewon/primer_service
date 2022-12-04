@@ -16,4 +16,4 @@ app.add_exception_handler(RequestValidationError, error_handling.validation_erro
 
 
 if __name__ == "__main__":
-    uvicorn.run("app.main:app", host=consts.HOST, port=consts.PORT, reload=True) #type: ignore
+    uvicorn.run("main:app", host=consts.HOST, port=consts.PORT, reload=True) #type: ignore
