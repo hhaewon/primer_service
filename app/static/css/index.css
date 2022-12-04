@@ -1,0 +1,64 @@
+body {
+    margin: 200px 40%;
+}
+
+form {
+    background-color: #0ea7bb;
+    width: 300px;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 300px;
+    height: 44;
+}
+
+input {
+    all: unset;
+    font: 16px system-ui;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+::placeholder {
+    color: #fff;
+    opacity: 0.7;
+}
+
+svg#queryImg {
+    color: #fff;
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    box-sizing: unset;
+}
+
+button#button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+
+table.table {
+    width: 750px;
+    height: 1100px;
+
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin: 20px -375px;
+}
+
+th.th {
+    width: auto;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}

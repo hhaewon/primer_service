@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>균 정보 서비스</title>
+        <!-- bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+        />
+        <link
+            href="{{ url_for('static', path='/css/index.css') }}"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"
+        ></script>
+        <form
+            action="/info/"
+            method="get"
+            role="search"
+            id="form"
+            onsubmit="this.action = this.action + this.query.value; this.submit();"
+        >
+            <input
+                type="search"
+                id="query"
+                placeholder="찾을 균 이름을 입력하세요 "
+                aria-label="Search through site content"
+                autocomplete="off"
+                list="germList"
+            />
+            <button id="button">
+                <svg id="queryImg" viewBox="0 0 1024 1024">
+                    <path
+                        class="path1"
+                        d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"
+                    ></path>
+                </svg>
+            </button>
+            <datalist id="germList">
+                {% for data in datas %}
+                <option value="{{ data.id }}">
+                    {{ data.name ~ ' (' ~ data.scientific_name ~ ')' }}
+                </option>
+                {% endfor %}
+            </datalist>
+        </form>
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col" class="th">#</th>
+                    <th scope="col" class="th">이름</th>
+                    <th scope="col" class="wide">염색체</th>
+                    <th scope="col" class="wide">플라스미드</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in datas %}
+                <tr>
+                    <th scope="row">{{ data.id }}</th>
+                    <td>
+                        <a href="/info/{{ data.id }}"
+                            >{{ data.name ~ " (" ~ data.scientific_name ~ ")"
+                            }}</a
+                        >
+                    </td>
+                    <td>
+                        <img
+                            src="{{ url_for('static', path='/images/agree_make_button.png') }}"
+                        />
+                    </td>
+                    {% if data.plsm.primer_1 == "x" %}
+                    <td>
+                        <img
+                            src="{{ url_for('static', path='/images/cross_mark_button.png') }}"
+                        />
+                    </td>
+                    {% else %}
+                    <td>
+                        <img
+                            src="{{ url_for('static', path='/images/agree_make_button.png') }}"
+                        />
+                    </td>
+                    {% endif %}
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
