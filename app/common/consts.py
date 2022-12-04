@@ -6,7 +6,8 @@ WORKSPACE_PATH = BASE_PATH.parent
 
 HOST = "0.0.0.0"
 PORT = 8000
+
 if HOST == "0.0.0.0":
-    BASE_URL = f"http://desktop-3046tlf:{PORT}"
+    BASE_URL = "https://www.primers.ml"
 else:
     BASE_URL = f"http://{HOST}:{PORT}"
