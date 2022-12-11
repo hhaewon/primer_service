@@ -13,7 +13,7 @@ router = APIRouter(prefix="/info",
 TEMPLATES = Jinja2Templates(directory=str(consts.BASE_PATH / "templates"))
 
 @router.get("/{id}")
-async def show_info(request: Request, id: int = Path(..., ge=1, le=20)):
+async def show_info(request: Request, id: int = Path(..., ge=1, le=30)):
     async with AsyncClient(base_url=consts.BASE_URL) as client:
         data = await client.get(url=f"/datas/{id}")
         json_data: Data = data.json()
