@@ -1,0 +1,81 @@
+body {
+    margin: 100px 40%;
+}
+
+h1 {
+    width: 400px;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+table.table {
+    width: 600px;
+    height: 200px;
+    float: left;
+    position: absolute;
+    left: 40%;
+    right: 50%;
+    margin: 100px -275px;
+    word-break: break-all;
+}
+
+th.row {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100px;
+}
+
+th.th {
+    width: auto;
+}
+
+th.primer {
+    width: 250px;
+    border-bottom: 0px;
+}
+
+th.fixed {
+    width: 400px;
+    border-bottom: 0px;
+}
+td {
+    white-space: unset;
+}
+
+#name {
+    position: absolute;
+    left: 45.7%;
+}
+
+#name > p {
+    margin-bottom: 3px;
+    font-size: 20px;
+}
+
+div.arrow {
+    cursor: pointer;
+    float: left;
+    position: relative;
+    top: 195px;
+    left: 350px;
+    background: transparent url("../images/arrows.png") no-repeat scroll 0px 0px;
+    transform: rotate(90deg);
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+div.left {
+    background-position: 0px -16px;
+    left: 750px;
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
